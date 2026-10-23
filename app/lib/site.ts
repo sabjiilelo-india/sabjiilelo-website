@@ -14,7 +14,7 @@ export const site = {
   playStoreUrl: "/coming-soon",
   appStoreUrl: "/coming-soon",
   // TODO: replace with verified business details
-  email: "support@sabjiilelo.com",
+  email: "sabjiilelo1@gmail.com",
   phone: "+91 73899 45999",
   whatsapp: "917389945999",
   whatsappMessage:
