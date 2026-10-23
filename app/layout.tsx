@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Poppins, Caveat } from "next/font/google";
 import Header from "./components/Header";
+import WhatsAppButton from "./components/WhatsAppButton";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         <Header />
         {children}
+        <WhatsAppButton />
       </body>
     </html>
   );

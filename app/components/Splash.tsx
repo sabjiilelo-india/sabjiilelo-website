@@ -6,10 +6,8 @@ import AppIcon from "./AppIcon";
 export default function Splash() {
   return (
     <div className="splash" aria-hidden>
-      {/* sunlit farm photo under a deep-green wash */}
-      <Image src="/images/hero-banner.webp" alt="" fill priority sizes="100vw" className="object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-b from-dark-green/85 via-primary/75 to-dark-green/95" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(126,217,87,0.35),transparent_60%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,#17803f_0%,#0e5a32_45%,#064420_80%,#032a14_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(126,217,87,0.28),transparent_60%)]" />
 
       <AppIcon name="leaf" className="leaf-float absolute left-[8%] top-[14%] h-12 w-12 opacity-90 [--rot:-20deg]" />
       <AppIcon name="leaf" className="leaf-float absolute right-[10%] top-[20%] h-10 w-10 opacity-90 [--rot:30deg] [animation-delay:-3s]" />
@@ -32,10 +30,11 @@ export default function Splash() {
       <div className="splash-bar relative mt-4" />
 
       {/* truck drives along the bottom while loading */}
-      <div className="splash-truck absolute bottom-6 left-0 w-28 sm:w-40">
+      <div className="splash-truck absolute bottom-[22px] left-0 w-28 sm:w-40">
         <Image src="/icons/brand-truck.webp" alt="" width={640} height={431} className="h-auto w-full drop-shadow-[0_10px_10px_rgba(0,0,0,0.35)]" />
       </div>
-      <div className="absolute inset-x-0 bottom-5 h-0.5 bg-white/25" />
+      <div className="absolute inset-x-0 bottom-5 h-3 bg-black/25" />
+      <div className="road-dash absolute inset-x-0 bottom-[25px] h-0.5" />
     </div>
   );
 }

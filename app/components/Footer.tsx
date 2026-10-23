@@ -68,9 +68,9 @@ export default function Footer() {
           <a href={`tel:${site.phone.replace(/\s/g, "")}`} className={`flex items-center gap-2 ${link}`}>
             <Call /> {site.phone}
           </a>
-          <span className="flex items-center gap-2">
+          <a href={site.mapsUrl} target="_blank" rel="noopener noreferrer" className={`flex items-center gap-2 ${link}`}>
             <Pin /> {site.address}
-          </span>
+          </a>
         </address>
       </div>
       <p className="border-t border-white/10 py-4 text-center text-xs text-white/60">

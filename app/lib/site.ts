@@ -15,7 +15,10 @@ export const site = {
   appStoreUrl: "/coming-soon",
   // TODO: replace with verified business details
   email: "support@sabjiilelo.com",
-  phone: "+91 98765 43210",
+  phone: "+91 73899 45999",
+  whatsapp: "917389945999",
+  mapsUrl:
+    "https://www.google.com/maps/place/23%C2%B011'14.2%22N+79%C2%B055'04.2%22E/@23.1872882,79.9152489,17z/data=!3m1!4b1!4m4!3m3!8m2!3d23.1872882!4d79.9178238?hl=en",
   address: "Jabalpur, Madhya Pradesh, India",
   socials: [
     { label: "Facebook", href: "#", icon: "facebook" },
