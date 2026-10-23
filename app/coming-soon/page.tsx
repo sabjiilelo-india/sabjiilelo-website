@@ -15,9 +15,8 @@ export default function ComingSoon() {
   return (
     <main className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden px-4 py-14 text-center">
       {/* sunlit farm photo with a fresh green wash */}
-      <Image src="/images/hero-banner.webp" alt="" fill priority sizes="100vw" className="kenburns object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-b from-primary/80 via-primary/55 to-dark-green/90" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(190,240,150,0.45),transparent_62%)]" />
+      <Image src="/images/hero-banner.webp" alt="" fill priority sizes="100vw" className="object-cover" />
+      <div className="absolute inset-0 bg-gradient-to-b from-dark-green/55 via-dark-green/25 to-dark-green/70" />
 
       {floaters.map((name, i) => (
         <span
@@ -30,7 +29,7 @@ export default function ComingSoon() {
         </span>
       ))}
 
-      <div className="relative z-10 w-full max-w-xl rounded-[2rem] bg-white/15 p-7 text-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.6)] ring-1 ring-white/30 backdrop-blur-md sm:p-10">
+      <div className="relative z-10 w-full max-w-xl rounded-[2rem] bg-dark-green/85 p-7 text-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/25 sm:p-10">
         <Image src="/images/logo.png" alt={site.name} width={112} height={112} priority className="hero-in mx-auto h-24 w-24 drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] sm:h-28 sm:w-28" />
         <p className="hero-in mt-3 text-sm uppercase tracking-[0.25em] text-white/90 [--delay:100ms]">{site.name}</p>
         <h1 className="shimmer hero-in mt-2 text-5xl font-bold leading-tight [--delay:200ms] sm:text-6xl">Coming Soon</h1>

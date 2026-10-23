@@ -21,10 +21,10 @@ export const site = {
     "https://www.google.com/maps/place/23%C2%B011'14.2%22N+79%C2%B055'04.2%22E/@23.1872882,79.9152489,17z/data=!3m1!4b1!4m4!3m3!8m2!3d23.1872882!4d79.9178238?hl=en",
   address: "Jabalpur, Madhya Pradesh, India",
   socials: [
-    { label: "Facebook", href: "#", icon: "facebook" },
-    { label: "Instagram", href: "#", icon: "instagram" },
-    { label: "YouTube", href: "#", icon: "youtube" },
-    { label: "Twitter", href: "#", icon: "twitter" },
-    { label: "LinkedIn", href: "#", icon: "linkedin" },
+    { label: "Facebook", href: "https://www.facebook.com/share/1EqLCv1D6B/", icon: "facebook" },
+    { label: "Instagram", href: "https://www.instagram.com/sabjiilelo_india", icon: "instagram" },
+    { label: "YouTube", href: "https://youtube.com/@sabjiilelo", icon: "youtube" },
+    { label: "Twitter", href: "https://x.com/Sabjiilelo", icon: "twitter" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/sabjiilelo-india", icon: "linkedin" },
   ],
 } as const;
