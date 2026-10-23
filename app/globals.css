@@ -1,0 +1,457 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #0e5a32;
+  --light-green: #d9f2e0;
+  --beige: #f5ebd7;
+  --cream: #fbf6ea;
+  --accent: #ff8a3d;
+  --dark-green: #064420;
+}
+
+@theme inline {
+  --color-primary: var(--primary);
+  --color-light-green: var(--light-green);
+  --color-beige: var(--beige);
+  --color-cream: var(--cream);
+  --color-accent: var(--accent);
+  --color-dark-green: var(--dark-green);
+  --font-sans: var(--font-poppins), system-ui, sans-serif;
+  --font-script: var(--font-caveat), cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+}
+
+body {
+  background: var(--cream);
+  color: #1c2a20;
+  font-family: var(--font-poppins), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Scroll reveal (fade-up), toggled by the Reveal component */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s ease,
+    transform 0.7s ease;
+  transition-delay: var(--delay, 0ms);
+}
+.reveal[data-from="left"] {
+  transform: translateX(-36px);
+}
+.reveal[data-from="right"] {
+  transform: translateX(36px);
+}
+.reveal[data-from="zoom"] {
+  transform: scale(0.88);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* Slow "ken burns" zoom on hero image */
+@keyframes kenburns {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.06);
+  }
+}
+.kenburns {
+  animation: kenburns 14s ease-out forwards;
+}
+
+/* Pop-in for step circles, arrow nudge, icon wiggle */
+@keyframes pop {
+  0% {
+    transform: scale(0.6);
+  }
+  70% {
+    transform: scale(1.08);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.reveal.is-visible .pop,
+.pop-now {
+  animation: pop 0.6s ease both;
+  animation-delay: calc(var(--delay, 0ms) + 150ms);
+}
+@keyframes nudge {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+.nudge {
+  animation: nudge 1.8s ease-in-out infinite;
+}
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+}
+.group:hover .wiggle {
+  animation: wiggle 0.5s ease;
+}
+
+/* Soft shine sweep on primary buttons */
+.shine {
+  position: relative;
+  overflow: hidden;
+}
+.shine::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, transparent 30%, rgba(255, 255, 255, 0.35) 50%, transparent 70%);
+  transform: translateX(-120%);
+  transition: transform 0.7s ease;
+}
+.shine:hover::after {
+  transform: translateX(120%);
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-in {
+  animation: fade-in 0.6s ease both;
+  animation-delay: var(--delay, 0ms);
+}
+
+@keyframes leaf-drift {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(var(--rot, 0deg));
+  }
+  50% {
+    transform: translate(10px, 18px) rotate(calc(var(--rot, 0deg) + 12deg));
+  }
+}
+.leaf-float {
+  animation: leaf-drift 7s ease-in-out infinite;
+}
+
+@keyframes badge-bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.badge-bounce {
+  animation: badge-bounce 3.2s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .hero-in,
+  .leaf-float,
+  .badge-bounce,
+  .kenburns,
+  .nudge,
+  .pop,
+  .wiggle {
+    animation: none !important;
+  }
+}
+
+/* Splash screen: pure CSS so it needs no JS and never causes hydration mismatch */
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: #064420;
+  color: #fff;
+  overflow: hidden;
+  animation: splash-out 0.6s ease 2.6s forwards;
+}
+@keyframes splash-out {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+.splash-logo {
+  animation: logo-in 0.9s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+@keyframes logo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.3) rotate(-25deg);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.splash-ring {
+  position: absolute;
+  border-radius: 9999px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  animation: ring 2s ease-out infinite;
+}
+@keyframes ring {
+  from {
+    transform: scale(0.7);
+    opacity: 0.8;
+  }
+  to {
+    transform: scale(2.2);
+    opacity: 0;
+  }
+}
+.splash-word span {
+  display: inline-block;
+  opacity: 0;
+  animation: letter-up 0.5s ease forwards;
+}
+@keyframes letter-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.splash-tag {
+  opacity: 0;
+  animation: fade-in 0.6s ease 1.5s forwards;
+}
+.splash-bar {
+  width: 9rem;
+  height: 4px;
+  border-radius: 9999px;
+  background: rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+.splash-bar::after {
+  content: "";
+  display: block;
+  height: 100%;
+  background: #7ed957;
+  transform-origin: left;
+  animation: bar 2.4s ease forwards;
+}
+@keyframes bar {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Coming soon page */
+.shimmer {
+  background: linear-gradient(90deg, #fff 20%, #7ed957 50%, #fff 80%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 3s linear infinite;
+}
+@keyframes shimmer {
+  to {
+    background-position: -200% center;
+  }
+}
+@keyframes blob {
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(30px, -40px) scale(1.15);
+  }
+}
+.blob {
+  animation: blob 9s ease-in-out infinite;
+}
+@keyframes rise {
+  from {
+    transform: translateY(105vh) rotate(0deg);
+    opacity: 0;
+  }
+  10%,
+  90% {
+    opacity: 0.8;
+  }
+  to {
+    transform: translateY(-15vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+.rise {
+  position: absolute;
+  bottom: 0;
+  animation: rise var(--dur, 12s) linear infinite;
+  animation-delay: var(--delay, 0s);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .splash {
+    animation-duration: 0.01s;
+    animation-delay: 0.8s;
+  }
+  .splash-logo,
+  .splash-ring,
+  .splash-word span,
+  .splash-tag,
+  .splash-bar::after,
+  .shimmer,
+  .blob,
+  .rise {
+    animation: none;
+    opacity: 1;
+  }
+}
+
+/* Light that travels along the How It Works connector */
+@keyframes travel {
+  from {
+    left: -4rem;
+  }
+  to {
+    left: 100%;
+  }
+}
+.travel {
+  animation: travel 3.5s ease-in-out infinite;
+}
+@media (prefers-reduced-motion: reduce) {
+  .travel {
+    animation: none !important;
+    display: none;
+  }
+}
+
+/* Chevrons that flow from one step to the next */
+@keyframes flow {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: translateX(-3px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(3px);
+  }
+}
+.flow-chev {
+  animation: flow 1.4s ease-in-out infinite;
+  animation-delay: calc(var(--i, 0) * 0.18s + var(--step, 0) * 0.45s);
+}
+@media (prefers-reduced-motion: reduce) {
+  .flow-chev {
+    animation: none !important;
+    opacity: 0.7;
+  }
+}
+
+/* Truck driving across the page */
+@keyframes drive {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+.truck-drive {
+  animation: drive 32s linear infinite;
+  animation-delay: -11s;
+}
+@keyframes bounce-road {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+.truck-bounce {
+  animation: bounce-road 0.45s ease-in-out infinite;
+}
+.road-dash {
+  background: repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0 18px, transparent 18px 36px);
+  animation: road-move 1.2s linear infinite;
+}
+@keyframes road-move {
+  to {
+    background-position: -36px 0;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .truck-drive {
+    animation: none;
+    transform: translateX(40vw);
+  }
+  .truck-bounce,
+  .road-dash {
+    animation: none;
+  }
+}
+
+/* Truck on the splash screen */
+@keyframes splash-drive {
+  from {
+    transform: translateX(-130%);
+  }
+  to {
+    transform: translateX(100vw);
+  }
+}
+.splash-truck {
+  animation: splash-drive 2.8s ease-in-out forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .splash-truck {
+    animation: none;
+    transform: translateX(40vw);
+  }
+}
