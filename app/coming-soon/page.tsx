@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import AppIcon, { type IconName } from "../components/AppIcon";
-import { site } from "../lib/site";
 
 export const metadata: Metadata = {
   title: "Coming Soon – Sabjii Le Lo",
@@ -13,7 +12,7 @@ const floaters: IconName[] = ["leaf", "basket", "leaf", "farmer", "heart-leaf", 
 
 export default function ComingSoon() {
   return (
-    <main className="relative flex min-h-[calc(100vh-4rem)] items-center justify-center overflow-hidden px-4 py-14 text-center">
+    <main className="relative flex min-h-[calc(100vh-5rem)] items-center justify-center overflow-hidden px-4 py-14 text-center">
       {/* sunlit farm photo with a fresh green wash */}
       <Image src="/images/hero-banner.webp" alt="" fill priority sizes="100vw" className="object-cover" />
       <div className="absolute inset-0 bg-gradient-to-b from-dark-green/55 via-dark-green/25 to-dark-green/70" />
@@ -30,9 +29,8 @@ export default function ComingSoon() {
       ))}
 
       <div className="relative z-10 w-full max-w-xl rounded-[2rem] bg-dark-green/85 p-7 text-white shadow-[0_30px_80px_-30px_rgba(0,0,0,0.7)] ring-1 ring-white/25 sm:p-10">
-        <Image src="/images/logo.png" alt={site.name} width={112} height={112} priority className="hero-in mx-auto h-24 w-24 drop-shadow-[0_8px_16px_rgba(0,0,0,0.3)] sm:h-28 sm:w-28" />
-        <p className="hero-in mt-3 text-sm uppercase tracking-[0.25em] text-white/90 [--delay:100ms]">{site.name}</p>
-        <h1 className="shimmer hero-in mt-2 text-5xl font-bold leading-tight [--delay:200ms] sm:text-6xl">Coming Soon</h1>
+        <AppIcon name="phone" className="hero-in mx-auto h-28 w-28 drop-shadow-[0_10px_18px_rgba(0,0,0,0.35)] sm:h-32 sm:w-32" />
+        <h1 className="shimmer hero-in mt-4 text-5xl font-bold leading-tight [--delay:200ms] sm:text-6xl">Coming Soon</h1>
         <p className="hero-in mt-4 leading-relaxed text-white/95 [--delay:350ms] sm:text-lg">
           We&apos;re getting our app ready for Google Play and the App Store. Fresh vegetables, straight from farmers to your
           home — launching very soon!

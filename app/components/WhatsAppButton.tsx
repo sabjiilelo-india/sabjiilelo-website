@@ -3,7 +3,7 @@ import { site } from "../lib/site";
 export default function WhatsAppButton() {
   return (
     <a
-      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent("Hi Sabjii Le Lo, I'd like to know more.")}`}
+      href={`https://wa.me/${site.whatsapp}?text=${encodeURIComponent(site.whatsappMessage)}`}
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Chat with us on WhatsApp"

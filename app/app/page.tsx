@@ -20,7 +20,7 @@ const points = [
 
 export default function AppPage() {
   return (
-    <main className="flex min-h-[calc(100vh-4rem)] flex-col bg-gradient-to-b from-cream via-[#eef6e6] to-cream">
+    <main className="flex min-h-[calc(100vh-5rem)] flex-col bg-gradient-to-b from-cream via-[#eef6e6] to-cream">
       {/* Two equal columns, image left / content right, content vertically centred */}
       <section className="mx-auto grid w-full max-w-[1760px] flex-1 items-center gap-8 px-5 pb-10 pt-6 sm:px-8 lg:grid-cols-2 lg:gap-10 lg:px-[5%] lg:pb-8 lg:pt-6">
         <Reveal from="left">

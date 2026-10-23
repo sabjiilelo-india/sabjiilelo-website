@@ -14,7 +14,7 @@ export default function Hero() {
     <section id="home" className="relative overflow-hidden bg-cream">
       <h1 className="sr-only">Sabjii Le Lo – Fresh Vegetables From Farmers To Your Home</h1>
       {/* Banner: crate on the right; text + trust row overlay the sunlit/beige left on md+ */}
-      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-auto lg:h-[calc(100svh-4rem)] lg:max-h-[820px] lg:min-h-[560px]">
+      <div className="relative aspect-[4/3] w-full sm:aspect-[16/9] lg:aspect-auto lg:h-[calc(100svh-5rem)] lg:max-h-[820px] lg:min-h-[560px]">
         <Image
           src="/images/hero-banner.webp"
           alt="Fresh vegetables and fruits in a wooden crate with a sunlit farm behind"

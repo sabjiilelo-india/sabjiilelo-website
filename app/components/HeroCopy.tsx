@@ -5,26 +5,12 @@ import { site } from "../lib/site";
 import { Arrow } from "./Icons";
 
 const slides = [
-  {
-    lang: "en",
-    title: ["Fresh Vegetables", "From Farmers", "To Your Home"],
-    text: ["Farm fresh. Chemical-free. Direct from farmers.", "Healthy families. Stronger farmers. A greener tomorrow."],
-  },
-  {
-    lang: "en",
-    title: ["Healthy Homes,", "Happy Farmers,", "Fresh Every Day"],
-    text: ["Fair income for every farmer.", "Fresh and simple, delivered to your door."],
-  },
-  {
-    lang: "hi",
-    title: ["Taazi Sabzi,", "Seedhe Aapke", "Ghar Tak"],
-    text: ["Seedhe kisan se, bina kisi beech ke.", "Swasth parivar, mazboot kisan, hara-bhara kal."],
-  },
-  {
-    lang: "hi",
-    title: ["Kisan Se", "Ghar Tak,", "Har Din Taaza"],
-    text: ["Khet ki taazgi, ab aapki rasoi tak.", "Sabjii Le Lo, har ghar ki pehli pasand."],
-  },
+  { lang: "en", title: "Bringing Fresh Vegetables from Farmers to Your Home." },
+  { lang: "hi", title: "Taazgi Ka Vaada, Apno Se Bhi Zyada." },
+  { lang: "en", title: "Farm Fresh, Family Blessed." },
+  { lang: "hi", title: "Aapki Rasoi Ka Taaza Saathi." },
+  { lang: "en", title: "Freshness Grown with Care, Delivered with Love." },
+  { lang: "hi", title: "Har Kisan Se, Har Ghar Tak." },
 ];
 
 const INTERVAL = 5000;
@@ -40,8 +26,8 @@ export default function HeroCopy() {
   }, []);
 
   return (
-    <div className="max-w-xl lg:max-w-md xl:max-w-lg">
-      <div className="grid">
+    <div className="max-w-xl lg:max-w-lg xl:max-w-xl">
+      <div className="grid min-h-[8.5rem] sm:min-h-[10.5rem] lg:min-h-[11.5rem] xl:min-h-[13rem]">
         {slides.map((s, n) => (
           <div
             key={n}
@@ -51,19 +37,12 @@ export default function HeroCopy() {
               n === i ? "translate-y-0 opacity-100" : "pointer-events-none translate-y-3 opacity-0"
             }`}
           >
-            <p role="heading" aria-level={2} className="text-[2.4rem] font-bold leading-[1.08] text-primary sm:text-5xl lg:text-[3.4rem]">
-              {s.title.map((l) => (
-                <span key={l} className="block">
-                  {l}
-                </span>
-              ))}
-            </p>
-            <p className="mt-4 text-base leading-relaxed text-[#1c2a20] sm:text-lg">
-              {s.text.map((l) => (
-                <span key={l} className="block">
-                  {l}
-                </span>
-              ))}
+            <p
+              role="heading"
+              aria-level={2}
+              className="text-[2.2rem] font-bold leading-[1.12] text-primary sm:text-5xl lg:text-[2.9rem] xl:text-[3.3rem]"
+            >
+              {s.title}
             </p>
           </div>
         ))}

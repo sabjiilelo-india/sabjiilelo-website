@@ -52,19 +52,18 @@ export default function Header() {
     >
       <div
         className={`mx-auto flex max-w-6xl items-center justify-between px-4 transition-all duration-300 sm:px-6 ${
-          scrolled ? "h-14" : "h-16"
+          scrolled ? "h-16" : "h-20"
         }`}
       >
-        <Link href="/" className="group flex items-center gap-2.5" onClick={() => setOpen(false)}>
+        <Link href="/" aria-label={`${site.name} – home`} className="group flex items-center" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo.png"
-            alt=""
-            width={40}
-            height={40}
+            src="/images/logo-full-dark.webp"
+            alt={site.name}
+            width={720}
+            height={645}
             priority
-            className="h-10 w-10 transition-transform duration-500 group-hover:rotate-[360deg]"
+            className={`w-auto transition-all duration-300 group-hover:scale-105 ${scrolled ? "h-14" : "h-[4.5rem]"}`}
           />
-          <span className="text-lg font-bold text-primary sm:text-xl">{site.name}</span>
         </Link>
 
         <nav className="hidden items-center gap-1 text-sm font-medium lg:flex" aria-label="Main">

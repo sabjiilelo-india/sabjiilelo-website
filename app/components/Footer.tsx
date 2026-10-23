@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { site } from "../lib/site";
 import { Social } from "./Icons";
 
@@ -30,10 +31,9 @@ export default function Footer() {
       <div className="mx-auto max-w-6xl px-6">
         {/* Main row, as in the mockup: logo | links | social icons */}
         <div className="flex flex-col items-center gap-6 py-8 lg:flex-row lg:justify-between">
-          <a href="#home" className="flex items-center gap-2.5">
-            <Image src="/images/logo.png" alt="" width={44} height={44} loading="lazy" className="h-11 w-11" />
-            <span className="whitespace-nowrap text-xl font-bold">{site.name}</span>
-          </a>
+          <Link href="/" aria-label={`${site.name} – home`}>
+            <Image src="/images/logo-full.webp" alt={site.name} width={720} height={645} loading="lazy" className="h-24 w-auto" />
+          </Link>
 
           <nav aria-label="Footer">
             <ul className="flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm">

@@ -1,6 +1,6 @@
 // Single place to edit nav links, store URLs and contact details.
 export const site = {
-  name: "Sabjii Le Lo",
+  name: "Sabjii LeLo",
   tagline: "Har Kisan Se Har Ghar Tak",
   nav: [
     { label: "Home", href: "/#home" },
@@ -17,6 +17,8 @@ export const site = {
   email: "support@sabjiilelo.com",
   phone: "+91 73899 45999",
   whatsapp: "917389945999",
+  whatsappMessage:
+    "Hello Sabjii LeLo Team! 🌿\nI’d love to explore your farm-fresh vegetable offerings.\nLooking forward to hearing from you!",
   mapsUrl:
     "https://www.google.com/maps/place/23%C2%B011'14.2%22N+79%C2%B055'04.2%22E/@23.1872882,79.9152489,17z/data=!3m1!4b1!4m4!3m3!8m2!3d23.1872882!4d79.9178238?hl=en",
   address: "Jabalpur, Madhya Pradesh, India",
@@ -25,6 +27,6 @@ export const site = {
     { label: "Instagram", href: "https://www.instagram.com/sabjiilelo_india", icon: "instagram" },
     { label: "YouTube", href: "https://youtube.com/@sabjiilelo", icon: "youtube" },
     { label: "Twitter", href: "https://x.com/Sabjiilelo", icon: "twitter" },
-    { label: "LinkedIn", href: "https://www.linkedin.com/company/sabjiilelo-india", icon: "linkedin" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/company/sabjii-le-lo/", icon: "linkedin" },
   ],
 } as const;
