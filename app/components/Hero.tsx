@@ -35,7 +35,16 @@ export default function Hero() {
       </div>
 
       {/* Mobile text sits below the image on the beige wave */}
-      <div className="relative -mt-10 rounded-t-[2.5rem] bg-cream px-4 pb-8 pt-8 shadow-[0_-12px_30px_-12px_rgba(14,90,50,0.35)] sm:px-6 lg:hidden">
+      <div className="relative -mt-10 bg-cream px-4 pb-8 pt-6 sm:px-6 lg:hidden">
+        {/* wave top edge: flows like the green wave on the banner, no rounded corner */}
+        <svg
+          aria-hidden
+          viewBox="0 0 400 48"
+          preserveAspectRatio="none"
+          className="absolute inset-x-0 -top-[47px] h-12 w-full text-cream"
+        >
+          <path d="M0 48V30C70 4 130 2 200 22s130 28 200 0V48z" fill="currentColor" />
+        </svg>
         <HeroCopy />
         <TrustRow className="mt-8" />
       </div>

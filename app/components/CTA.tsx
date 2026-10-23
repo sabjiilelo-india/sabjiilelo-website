@@ -9,11 +9,11 @@ export default function CTA() {
       {/* Mobile: farmer image on top. md+: image is the background, text sits on the right. */}
       <div className="relative h-52 sm:h-64 md:absolute md:inset-0 md:h-auto">
         <Image
-          src="/images/farmer-banner.webp"
+          src="/images/farmer-banner-v2.webp"
           alt="Smiling farmer holding a crate of fresh vegetables in a sunlit field"
           fill
           sizes="100vw"
-          className="object-cover object-[12%_center] md:object-[20%_center]"
+          className="object-cover object-[14%_center] md:object-center"
         />
         {/* Fade the top edge into the section above */}
         {/* short fade over the farmer so his face stays clear; longer fade only to his right */}
