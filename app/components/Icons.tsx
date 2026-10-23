@@ -127,10 +127,11 @@ export function Social({ name, ...p }: { name: string } & P) {
       </>
     ),
     youtube: (
-      <>
-        <rect x="3" y="6" width="18" height="12" rx="4" fill="currentColor" />
-        <path d="M10.500 9.500v5l4.500-2.500z" fill="#0e5a32" />
-      </>
+      <path
+        fill="currentColor"
+        fillRule="evenodd"
+        d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3L10 15z"
+      />
     ),
     twitter: (
       <path d="M17.8 3h3L14.2 10.500 22 21h-6.100l-4.800-6.200L5.600 21h-3l7-8L2.200 3h6.200l4.300 5.700L17.800 3zm-1.100 16.200h1.700L7.500 4.700H5.700l11 14.500z" fill="currentColor" />
