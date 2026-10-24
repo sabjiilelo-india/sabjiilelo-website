@@ -62,7 +62,7 @@ export default function Header() {
             width={720}
             height={645}
             priority
-            className={`w-auto transition-all duration-300 group-hover:scale-105 ${scrolled ? "h-14" : "h-[4.5rem]"}`}
+            className={`w-auto drop-shadow-[0_0_1px_rgba(6,68,32,0.9)] drop-shadow-[0_2px_3px_rgba(6,68,32,0.55)] transition-all duration-300 group-hover:scale-105 ${scrolled ? "h-14" : "h-[4.5rem]"}`}
           />
         </Link>
 
