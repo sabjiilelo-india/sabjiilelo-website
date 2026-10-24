@@ -57,7 +57,7 @@ export default function Header() {
       >
         <Link href="/" aria-label={`${site.name} – home`} className="group flex items-center" onClick={() => setOpen(false)}>
           <Image
-            src="/images/logo-full-dark.webp"
+            src="/images/logo-full.webp"
             alt={site.name}
             width={720}
             height={645}
